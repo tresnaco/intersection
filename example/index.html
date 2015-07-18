@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="../src/intersection.js"></script>
+    <script>
+      $(function() {
+        var intersect = new Intersection("#iframeChange", true);
+        var fromIframe = intersect.master();
+        fromIframe.on('loaded', function() {
+          $("body").append('frame is loaded');
+          intersect.emit('echo', 'working');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <iframe id="iframeChange" src="iframe.html"></iframe>
+  </body>
+</html>

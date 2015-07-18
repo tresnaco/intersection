@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="../src/intersection.js"></script>
+    <script>
+      $(function() {
+        var intersect = new Intersection().frame();
+        //console.log(intersect);
+        intersect.on('echo', function(data) {
+          $("body").html(data);
+        });
+        master.emit('loaded');
+      });
+    </script>
+  </head>
+  <body>
+    iframe nothing
+  </body>
+</html>
